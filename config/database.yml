@@ -15,11 +15,13 @@
 # gem 'pg'
 #
 default: &default
+  host: localhost
   adapter: postgresql
   encoding: unicode
+  pool: 5
+  password: password
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
 
 development:
   <<: *default
@@ -76,10 +78,10 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
-  <<: *default
-  database: habithacks_production
-  username: habithacks
-  password: <%= ENV['HABITHACKS_DATABASE_PASSWORD'] %>
+##     url: <%= ENV['DATABASE_URL'] %>
+##
+#production:
+  #<<: *default
+  #database: habithacks_production
+  #username: habithacks
+  #password: <%= ENV['HABITHACKS_DATABASE_PASSWORD'] %>
