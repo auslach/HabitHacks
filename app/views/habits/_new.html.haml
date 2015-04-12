@@ -1,0 +1,9 @@
+.create-habit
+  = simple_form_for @habit, remote: true do |f|
+    %h4
+      What would you like to do?
+    = f.input :title, label: false, placeholder: "Title"
+    %h4
+      For how many days?
+    = f.input :days, label: false, placeholder: "Days"
+    = f.button :submit, class: 'btn btn-default'

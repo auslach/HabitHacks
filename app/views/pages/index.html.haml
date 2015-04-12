@@ -1,4 +1,10 @@
-- if !user_signed_in?
-  = link_to "Login", login_path
+- if user_signed_in?
+  %section.user-container
+    %h1 Sponsor a Habit
+    %ul.list-unstyled.habits-list#habits-list
+      - @habits.each do |habit|
+        = render partial: 'habits/habit', locals: { habit: habit }
+    %br
 - else
-  = link_to "Logout", logout_path
+  %section.visitor-container
+    = link_to "LOGIN", login_path, class: 'btn btn-large'

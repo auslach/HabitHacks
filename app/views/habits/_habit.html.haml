@@ -1,0 +1,16 @@
+%li.habit-item
+  %span.habit-status
+    - if habit.status
+      %i{class: 'fa fa-check-square-o'}
+    - else
+      %i{class: 'fa fa-square-o'}
+  %span.date.habit-data
+    = "#{habit.created_at.strftime("%m-%e-%Y")} -"
+  %span.title.habit-data
+    = habit.title
+  for
+  %span.days.habit-data
+    = habit.days
+  days
+  - if habit.user_id != current_user.id
+    = render partial: "sponsorships/new", locals: { habit_id: habit.id }

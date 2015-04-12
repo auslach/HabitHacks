@@ -1,3 +1,78 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$green: #006442;
+$light-green: #51A88B;
+
+div, span, section {
+  /*border: 1px solid black;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+.navbar-default {
+  background-color: $green;
+  margin-bottom: 2em;
+  a {
+    color: white !important;
+    text-transform: uppercase;
+  }
+}
+
+.visitor-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.create-habit {
+  input[type='text'] {
+    width: 50%;
+  }
+  input {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    margin-bottom: 0.5em;
+  }
+  .btn {
+    margin-top: 1em;
+  }
+}
+
+.habit-status {
+  position: absolute;
+  right: 1em;
+}
+
+.habits-list, .sponsorships-list {
+  .habit-item:nth-child(odd), .sponsorship-item:nth-child(odd) {
+    background-color: $light-green;
+  }
+  .habit-item, .sponsorship-item {
+    position: relative;
+    padding: 1em 0 1em 0;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    .habit-data, .sponsorship-data {
+      font-weight: bold;
+    }
+  }
+  .sponsorship-item {
+    font-size: 1em;
+  }
+}
+.sponsor-habit-form {
+  width: 15em;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  position: relative;
+  input[type='number'] {
+    width: 10em;
+    font-size: 0.75em;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+}
+

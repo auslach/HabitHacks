@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'pages#index'
 
-   resources :users
-
    get '/auth/:provider/callback', to: 'sessions#create'
+
+   get '/profile' => 'pages#profile', as: :profile
+   resources :habits, only: [:create]
+   resources :sponsorships, only: [:create]
 
    get '/login' => 'sessions#new', as: :login
    get '/logout' => 'sessions#destroy', as: :logout

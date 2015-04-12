@@ -1,0 +1,17 @@
+-#= "You sponsored #{sponsorship.sponsorship.title} for #{sponsorship.sponsorship.days} days | $#{sponsorship.amount/sponsorship.interval} every #{sponsorship.interval} days."
+%li.sponsorship-item
+  You sponsored
+  %span.title.sponsorship-data
+    = sponsorship.habit.title
+  for
+  %span.days.sponsorship-data
+    = sponsorship.habit.days
+  days ||
+  %span.amount.sponsorship-data
+    = "$#{sponsorship.amount/sponsorship.interval}"
+  every
+  %span.interval.sponsorship-data
+    = sponsorship.interval
+  days
+  - if sponsorship.user_id != current_user.id
+    = render partial: "sponsorships/new", locals: { sponsorship: sponsorship.id }

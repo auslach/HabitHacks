@@ -1,0 +1,6 @@
+.sponsor-habit-form
+  = simple_form_for @sponsorship do |f|
+    = f.hidden_field :habit_id, value: habit_id
+    = f.input :amount, label: false, placeholder: "$ Amount", id: "amount"
+    = f.input :interval, label: false, placeholder: "Interval (days)", id: "interval"
+    = f.button :submit, "Sponsor", class: 'btn btn-default'

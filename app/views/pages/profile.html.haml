@@ -1,0 +1,12 @@
+= render partial: 'habits/new'
+%h1 Your Habits
+%ul.list-unstyled.habits-list#habits-list
+  - @habits.each do |habit|
+    = render partial: 'habits/habit', locals: { habit: habit }
+%br
+
+%h1 Sponsorships
+%ul.list-unstyled.sponsorships-list#sponsorships-list
+  - @sponsorships.each do |sponsorship|
+    = render partial: 'sponsorships/sponsorship', locals: { sponsorship: sponsorship }
+%br
