@@ -2,12 +2,9 @@ class SessionsController < ApplicationController
 
   def new
     redirect_to "https://api.venmo.com/v1/oauth/authorize?client_id=#{ENV['VENMO_CLIENT_ID']}&scope=access_profile&response_type=code&redirect_uri=#{request.protocol + request.host_with_port}/auth/venmo/callback"
-    #redirect_to '/auth/venmo'
-    #redirect_to "https://api.venmo.com/v1/oauth/authorize?client_id=#{ENV['VENMO_CLIENT_ID']}&scope=make_payments%20access_profile%20access_email%20access_phone%20access_balance&response_type=code"
   end
 
   def create
-    #byebug
     post_params = { 'client_id' => ENV['VENMO_CLIENT_ID'], 'code' => params['code'], 'client_secret' => ENV['VENMO_CLIENT_SECRET'] }
     puts params
 
